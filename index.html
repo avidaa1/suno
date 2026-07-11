@@ -124,7 +124,11 @@ body>*{position:relative;z-index:1}
 }
 .acc-card:hover{border-color:var(--a);transform:translateY(-4px)}
 .acc-top{display:flex;align-items:center;gap:12px}
-.acc-avatar{width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:1px;color:#fff;flex-shrink:0;font-weight:400}
+.acc-avatar{width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:1px;color:#fff;flex-shrink:0;font-weight:400;overflow:hidden}
+.acc-avatar img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+.acc-card{position:relative;overflow:hidden}
+.acc-banner{position:absolute;inset:0;background-size:cover;background-position:center;opacity:.16;filter:saturate(1.2);pointer-events:none}
+.acc-card>*:not(.acc-banner){position:relative;z-index:1}
 .acc-name{font-family:'Bebas Neue',sans-serif;font-size:22px;line-height:1;letter-spacing:.5px}
 .acc-handle{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--a);margin-top:2px}
 .acc-stats-row{display:flex;gap:16px}
@@ -261,9 +265,27 @@ footer a{color:var(--a)}footer a:hover{text-decoration:underline}
   .c-row{flex-direction:column}
   .donate-bar{margin:0 0 60px}
 }
+
+/* ─── STANDARD RAINBOW AVIDAA HOME BUTTON ─── */
+.topbar{position:fixed;top:0;right:0;z-index:100;padding:16px 24px}
+#back-home{
+  font-family:'Bebas Neue',sans-serif;font-size:32px;letter-spacing:1.5px;
+  font-weight:700;text-decoration:none;-webkit-appearance:none;appearance:none;white-space:nowrap;
+  background:linear-gradient(90deg,#ff0080,#ff8c00,#ffe000,#00ff80,#00bfff,#a855f7,#ff0080);
+  background-size:300% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  animation:rainbow 3s linear infinite;
+}
+@keyframes rainbow{to{background-position:300% center}}
+@media (prefers-reduced-motion:reduce){#back-home{animation:none}}
+@media(max-width:600px){#back-home{font-size:22px}.topbar{padding:12px 16px}}
 </style>
 </head>
 <body>
+
+<!-- ═══ TOPBAR: STANDARD RAINBOW HOME BUTTON ═══ -->
+<div class="topbar">
+  <a id="back-home" href="https://avidaa1.github.io">AVIDAA</a>
+</div>
 
 <!-- ═══ HERO ═══ -->
 <section class="hero">
@@ -282,14 +304,14 @@ footer a{color:var(--a)}footer a:hover{text-decoration:underline}
 
   <p class="hero-sub">
     AI-crafted sound · Consciousness · Frequency<br>
-    4 accounts · <span id="stat-pl-sub">21</span> playlists · all songs open
+    4 accounts · <span id="stat-pl-sub">47</span> playlists · all songs open
   </p>
 
   <div class="hero-stats">
-    <div class="s-item"><div class="s-num">9.7K</div><div class="s-lbl">Total Plays</div></div>
+    <div class="s-item"><div class="s-num">12.3K</div><div class="s-lbl">Total Plays</div></div>
     <div class="s-item"><div class="s-num">4</div><div class="s-lbl">Accounts</div></div>
-    <div class="s-item"><div class="s-num" id="stat-pl">21</div><div class="s-lbl">Playlists</div></div>
-    <div class="s-item"><div class="s-num" id="stat-songs">516+</div><div class="s-lbl">Songs</div></div>
+    <div class="s-item"><div class="s-num" id="stat-pl">47</div><div class="s-lbl">Playlists</div></div>
+    <div class="s-item"><div class="s-num" id="stat-songs">226</div><div class="s-lbl">Songs</div></div>
   </div>
 
   <div class="cta-row">
@@ -307,8 +329,8 @@ footer a{color:var(--a)}footer a:hover{text-decoration:underline}
 <!-- ═══ MARQUEE ═══ -->
 <div class="marquee-wrap">
   <div class="marquee-track" id="mq">
-    <span class="gm">AVIDAA</span><span>PAPIA KU MI</span><span class="gm">BOS DI ANSESTRONAN</span><span>DOWN THE RABBIT HOLE</span><span class="gm">KLARIDAT</span><span>FOREVER FREE</span><span class="gm">QUANTUM</span><span>SPLIT PARTICLE</span><span class="gm">ELECTRO MAGNETIC</span><span>CLEARER NOW</span><span class="gm">SYNTHETIC SPARK</span><span>OPEN EYES</span><span class="gm">LIBERTAD</span><span>ONE THREAD</span><span class="gm">PARADIGM SHIFT</span>
-    <span class="gm">AVIDAA</span><span>PAPIA KU MI</span><span class="gm">BOS DI ANSESTRONAN</span><span>DOWN THE RABBIT HOLE</span><span class="gm">KLARIDAT</span><span>FOREVER FREE</span><span class="gm">QUANTUM</span><span>SPLIT PARTICLE</span><span class="gm">ELECTRO MAGNETIC</span><span>CLEARER NOW</span><span class="gm">SYNTHETIC SPARK</span><span>OPEN EYES</span><span class="gm">LIBERTAD</span><span>ONE THREAD</span><span class="gm">PARADIGM SHIFT</span>
+    <span class="gm">AVIDAA</span><span>PAPIA KU MI</span><span class="gm">BOS DI ANSESTRONAN</span><span>DOWN THE RABBIT HOLE</span><span class="gm">KLARIDAT</span><span>FOREVER FREE</span><span class="gm">QUANTUM</span><span>SPLIT PARTICLE</span><span class="gm">ELECTRO MAGNETIC</span><span>CLEARER NOW</span><span class="gm">SYNTHETIC SPARK</span><span>OPEN EYES</span><span class="gm">LIBERTAD</span><span>ONE THREAD</span><span class="gm">PARADIGM SHIFT</span><span>DEEP HOUSE</span><span class="gm">TOP BEST</span><span>AI RISE</span><span class="gm">BITCOIN PULSE</span><span>ECHO STEEL</span><span class="gm">THE HEALERS</span><span>PARAMARIBO</span><span class="gm">MOON SPIRIT</span><span>BLOSSOMS OF SERENITY</span><span class="gm">KEDA</span>
+    <span class="gm">AVIDAA</span><span>PAPIA KU MI</span><span class="gm">BOS DI ANSESTRONAN</span><span>DOWN THE RABBIT HOLE</span><span class="gm">KLARIDAT</span><span>FOREVER FREE</span><span class="gm">QUANTUM</span><span>SPLIT PARTICLE</span><span class="gm">ELECTRO MAGNETIC</span><span>CLEARER NOW</span><span class="gm">SYNTHETIC SPARK</span><span>OPEN EYES</span><span class="gm">LIBERTAD</span><span>ONE THREAD</span><span class="gm">PARADIGM SHIFT</span><span>DEEP HOUSE</span><span class="gm">TOP BEST</span><span>AI RISE</span><span class="gm">BITCOIN PULSE</span><span>ECHO STEEL</span><span class="gm">THE HEALERS</span><span>PARAMARIBO</span><span class="gm">MOON SPIRIT</span><span>BLOSSOMS OF SERENITY</span><span class="gm">KEDA</span>
   </div>
 </div>
 
@@ -323,77 +345,82 @@ footer a{color:var(--a)}footer a:hover{text-decoration:underline}
     <div class="acc-grid">
 
       <div class="acc-card">
+        <div class="acc-banner" style="background-image:url('https://cdn1.suno.ai/e5ec7233.webp')"></div>
         <div class="acc-top">
-          <div class="acc-avatar" style="background:linear-gradient(135deg,#ff7722,#ff3d8b)">AV</div>
+          <div class="acc-avatar"><img src="https://cdn2.suno.ai/42340ac2-0014-4ca1-a9a8-234d7c46bb36.jpeg" alt="AVIDAA"></div>
           <div>
             <div class="acc-name">AVIDAA</div>
             <div class="acc-handle">@avidaa</div>
           </div>
         </div>
         <div class="acc-stats-row">
-          <div class="acc-stat"><strong>7.4K</strong>Plays</div>
-          <div class="acc-stat"><strong>56</strong>Followers</div>
-          <div class="acc-stat"><strong>9</strong>Playlists</div>
+          <div class="acc-stat"><strong>8.2K</strong>Plays</div>
+          <div class="acc-stat"><strong>116</strong>Followers</div>
+          <div class="acc-stat"><strong>21</strong>Playlists</div>
         </div>
         <div class="acc-btns">
           <a href="https://suno.com/@avidaa" target="_blank" class="btn btn-pri">▶ Profile</a>
-          <a href="https://suno.com/invite/@avidaa" target="_blank" class="btn btn-inv">🎁 Join &amp; Earn</a>
+          <a href="https://suno.com/invite/@avidaa" target="_blank" class="btn btn-inv">🎁 Invite &amp; Get Credits</a>
         </div>
       </div>
 
       <div class="acc-card">
+        <div class="acc-banner" style="background-image:url('https://cdn1.suno.ai/23d4583c.webp')"></div>
         <div class="acc-top">
-          <div class="acc-avatar" style="background:linear-gradient(135deg,#b03dff,#ff3d8b)">A¹</div>
+          <div class="acc-avatar"><img src="https://cdn2.suno.ai/2d588356-0008-4c04-9ffa-5ca14875656e.jpeg" alt="AVIDAA¹"></div>
           <div>
             <div class="acc-name">AVIDAA¹</div>
             <div class="acc-handle">@avidaa1</div>
           </div>
         </div>
         <div class="acc-stats-row">
-          <div class="acc-stat"><strong>2.0K</strong>Plays</div>
-          <div class="acc-stat"><strong>8</strong>Followers</div>
-          <div class="acc-stat"><strong>9</strong>Playlists</div>
+          <div class="acc-stat"><strong>2.7K</strong>Plays</div>
+          <div class="acc-stat"><strong>11</strong>Followers</div>
+          <div class="acc-stat"><strong>14</strong>Playlists</div>
         </div>
         <div class="acc-btns">
           <a href="https://suno.com/@avidaa1" target="_blank" class="btn btn-pri">▶ Profile</a>
-          <a href="https://suno.com/invite/@avidaa1" target="_blank" class="btn btn-inv">🎁 Join &amp; Earn</a>
+          <a href="https://suno.com/invite/@avidaa1" target="_blank" class="btn btn-inv">🎁 Invite &amp; Get Credits</a>
         </div>
       </div>
 
       <div class="acc-card">
+        <div class="acc-banner" style="background-image:url('https://cdn1.suno.ai/b369ed97.webp')"></div>
         <div class="acc-top">
-          <div class="acc-avatar" style="background:linear-gradient(135deg,#00c896,#0088ff)">A²</div>
+          <div class="acc-avatar"><img src="https://cdn2.suno.ai/f35243cb-1955-4b02-86f4-d84816942bd2.jpeg" alt="AVIDAA²"></div>
           <div>
             <div class="acc-name">AVIDAA²</div>
             <div class="acc-handle">@avidaa2</div>
           </div>
         </div>
         <div class="acc-stats-row">
-          <div class="acc-stat"><strong>164</strong>Plays</div>
-          <div class="acc-stat"><strong>12</strong>Followers</div>
-          <div class="acc-stat"><strong>2</strong>Playlists</div>
+          <div class="acc-stat"><strong>1.2K</strong>Plays</div>
+          <div class="acc-stat"><strong>39</strong>Followers</div>
+          <div class="acc-stat"><strong>6</strong>Playlists</div>
         </div>
         <div class="acc-btns">
           <a href="https://suno.com/@avidaa2" target="_blank" class="btn btn-pri">▶ Profile</a>
-          <a href="https://suno.com/invite/@avidaa2" target="_blank" class="btn btn-inv">🎁 Join &amp; Earn</a>
+          <a href="https://suno.com/invite/@avidaa2" target="_blank" class="btn btn-inv">🎁 Invite &amp; Get Credits</a>
         </div>
       </div>
 
       <div class="acc-card">
+        <div class="acc-banner" style="background-image:url('https://cdn1.suno.ai/dc836b83.webp')"></div>
         <div class="acc-top">
-          <div class="acc-avatar" style="background:linear-gradient(135deg,#0088ff,#00c8ff)">A⁰</div>
+          <div class="acc-avatar"><img src="https://cdn2.suno.ai/6dbb1054-fa54-4f59-a79b-d52daab8439f.jpeg" alt="AVIDAA⁰"></div>
           <div>
             <div class="acc-name">AVIDAA⁰</div>
             <div class="acc-handle">@avidaa0</div>
           </div>
         </div>
         <div class="acc-stats-row">
+          <div class="acc-stat"><strong>175</strong>Plays</div>
           <div class="acc-stat"><strong>3</strong>Followers</div>
-          <div class="acc-stat"><strong>2</strong>Playlists</div>
+          <div class="acc-stat"><strong>6</strong>Playlists</div>
         </div>
         <div class="acc-btns">
           <a href="https://suno.com/@avidaa0" target="_blank" class="btn btn-pri">▶ Profile</a>
-          <a href="https://suno.com/invite/@avidaa0" target="_blank" class="btn btn-inv">🎁 Join &amp; Earn</a>
+          <a href="https://suno.com/invite/@avidaa0" target="_blank" class="btn btn-inv">🎁 Invite &amp; Get Credits</a>
         </div>
       </div>
 
@@ -407,7 +434,7 @@ footer a{color:var(--a)}footer a:hover{text-decoration:underline}
     <div class="sec-head">
       <h2 class="sec-title">Playlists</h2>
       <div class="sec-line"></div>
-      <span class="sec-meta">21 playlists</span>
+      <span class="sec-meta">47 playlists</span>
     </div>
 
     <div class="tab-row">
@@ -580,32 +607,57 @@ footer a{color:var(--a)}footer a:hover{text-decoration:underline}
 <script>
 // ─── PLAYLIST DATA ───
 var PL=[
-  // @avidaa (9)
+  // @avidaa (21) — verified 2026-07-11
+  {title:'Tejido | Digital',acc:'avidaa',songs:4,url:'https://suno.com/playlist/f9c2ec0c-66fc-493e-bd68-38f56bb34499'},
+  {title:'Forever | Free',acc:'avidaa',songs:11,url:'https://suno.com/playlist/5d914e9c-605b-4491-a8e0-2c786d8bcbbc'},
+  {title:'Bos Di Ansestronan',acc:'avidaa',songs:8,url:'https://suno.com/playlist/b72a995a-a72b-430b-a980-a4a9e4f32c82'},
+  {title:'Deep House',acc:'avidaa',songs:51,url:'https://suno.com/playlist/282f32f4-ed53-4d48-a6ab-4c2fe1f88aa2'},
+  {title:'Libertad',acc:'avidaa',songs:11,url:'https://suno.com/playlist/d0b668dd-b7f7-47d6-83b1-4211659b1f87'},
+  {title:'Only Truth',acc:'avidaa',songs:3,url:'https://suno.com/playlist/2ec8bf1f-c00a-46bf-869d-a2378eb7cc78'},
+  {title:'Open | Eyes',acc:'avidaa',songs:2,url:'https://suno.com/playlist/1f6e0ec0-a262-4136-9b32-e42f614714d6'},
+  {title:'Papia Ku Mi',acc:'avidaa',songs:9,url:'https://suno.com/playlist/c09be329-ace8-4eb7-a932-900465e2e44b'},
+  {title:'Klaridat',acc:'avidaa',songs:10,url:'https://suno.com/playlist/4b0d502f-31e0-4432-8c6b-2f974bdfa1f3'},
+  {title:'Top Best',acc:'avidaa',songs:67,url:'https://suno.com/playlist/a02e866e-4b6b-4566-bec3-0e01258b6bce'},
   {title:'Down The Rabbit Hole',acc:'avidaa',songs:28,url:'https://suno.com/playlist/39c9c490-c8ed-4052-8126-f9c054f84860'},
-  {title:'Forever | Free',acc:'avidaa',songs:12,url:'https://suno.com/playlist/5d914e9c-605b-4491-a8e0-2c786d8bcbbc'},
   {title:'Split | Particle',acc:'avidaa',songs:13,url:'https://suno.com/playlist/d10c445a-17ab-4582-a111-89621b9605e0'},
-  {title:'Klaridat',acc:'avidaa',songs:11,url:'https://suno.com/playlist/4b0d502f-31e0-4432-8c6b-2f974bdfa1f3'},
-  {title:'Papia Ku Mi',acc:'avidaa',songs:8,url:'https://suno.com/playlist/c09be329-ace8-4eb7-a932-900465e2e44b'},
+  {title:'AI | Rise',acc:'avidaa',songs:25,url:'https://suno.com/playlist/dd39596b-13a3-45a9-b431-b18fc685f586'},
+  {title:'AVIDAA',acc:'avidaa',songs:16,url:'https://suno.com/playlist/a5d36fa5-6955-4110-bb9a-9aaa56444b84'},
+  {title:'Bitcoin | Pulse',acc:'avidaa',songs:27,url:'https://suno.com/playlist/06cc5570-9976-4a3d-b944-11bd607e1cb2'},
+  {title:'Echo | Steel',acc:'avidaa',songs:15,url:'https://suno.com/playlist/d6dbfb36-b00a-4c64-bc95-94f16ee5dbfa'},
   {title:'Electro | Magnetic',acc:'avidaa',songs:8,url:'https://suno.com/playlist/a247dd69-0989-4814-9eec-56ef1f901e05'},
-  {title:'Bos Di Ansestronan',acc:'avidaa',songs:7,url:'https://suno.com/playlist/b72a995a-a72b-430b-a980-a4a9e4f32c82'},
-  {title:'Libertad',acc:'avidaa',songs:3,url:'https://suno.com/playlist/d0b668dd-b7f7-47d6-83b1-4211659b1f87'},
-  {title:'Open | Eyes',acc:'avidaa',songs:1,url:'https://suno.com/playlist/1f6e0ec0-a262-4136-9b32-e42f614714d6'},
-  // @avidaa1 (9)
-  {title:'Clearer | Now',acc:'avidaa1',songs:24,url:'https://suno.com/playlist/373369f7-2ab1-4f34-add0-c55b492ef219'},
-  {title:'Down The Rabbit Hole \u00b9',acc:'avidaa1',songs:24,url:'https://suno.com/playlist/4f412d79-e6ff-431c-8122-9d27a4b11289'},
-  {title:'Synthetic | Spark',acc:'avidaa1',songs:10,url:'https://suno.com/playlist/a32e1c1d-17be-42ea-a785-c586d685e0b0'},
-  {title:'Papia Ku Mi',acc:'avidaa1',songs:12,url:'https://suno.com/playlist/8ef35197-9724-4033-9108-da8a2f901d5c'},
-  {title:'Bos Di Ansestronan',acc:'avidaa1',songs:4,url:'https://suno.com/playlist/a5afb79d-1c0b-4110-b528-b70bd16712a1'},
-  {title:'Quantum',acc:'avidaa1',songs:4,url:'https://suno.com/playlist/7b4a7a3d-d87d-4440-b2dd-d2b0a9e9c115'},
+  {title:'The Healers',acc:'avidaa',songs:21,url:'https://suno.com/playlist/e2b15986-e4a8-48cc-b07d-504be7042d76'},
+  {title:'Paramaribo',acc:'avidaa',songs:26,url:'https://suno.com/playlist/c4904dad-101c-48c8-8914-f8abff206c94'},
+  {title:'Moon Spirit',acc:'avidaa',songs:7,url:'https://suno.com/playlist/b1a75a3c-5bd9-462e-9e78-611a2f3db8f1'},
+  {title:'Blossoms of Serenity',acc:'avidaa',songs:15,url:'https://suno.com/playlist/3e7fbc70-7acd-4ff9-833d-84e3fd687f0e'},
+  // @avidaa1 (14) — verified 2026-07-11
+  {title:'Tejido | Digital',acc:'avidaa1',songs:4,url:'https://suno.com/playlist/e7bb5c85-3b3e-4352-a883-1884743bd124'},
+  {title:'Bos Di Ansestronan',acc:'avidaa1',songs:5,url:'https://suno.com/playlist/a5afb79d-1c0b-4110-b528-b70bd16712a1'},
+  {title:'Down The Rabbit Hole \u00b9',acc:'avidaa1',songs:16,url:'https://suno.com/playlist/4f412d79-e6ff-431c-8122-9d27a4b11289'},
+  {title:'Clearer | Now',acc:'avidaa1',songs:21,url:'https://suno.com/playlist/373369f7-2ab1-4f34-add0-c55b492ef219'},
+  {title:'Keda',acc:'avidaa1',songs:3,url:'https://suno.com/playlist/823bab33-de0b-4e1b-9421-6741013d7e50'},
+  {title:'Libertad',acc:'avidaa1',songs:8,url:'https://suno.com/playlist/3886e764-ee1c-482e-865e-504b1ef27481'},
+  {title:'Only Truth',acc:'avidaa1',songs:3,url:'https://suno.com/playlist/75248fa1-34fd-4230-9da3-ac684e88288a'},
+  {title:'Open | Eyes',acc:'avidaa1',songs:2,url:'https://suno.com/playlist/1fd3d82b-4f4f-4b69-90f2-45fff911d6c3'},
+  {title:'Papia Ku Mi',acc:'avidaa1',songs:13,url:'https://suno.com/playlist/8ef35197-9724-4033-9108-da8a2f901d5c'},
   {title:'One | Thread',acc:'avidaa1',songs:4,url:'https://suno.com/playlist/8f860532-d09c-4788-aeee-a9ee30cc7f53'},
+  {title:'Top Best',acc:'avidaa1',songs:3,url:'https://suno.com/playlist/d4e6f83f-9523-46fa-8690-f68dafa7f2d1'},
+  {title:'Quantum',acc:'avidaa1',songs:4,url:'https://suno.com/playlist/7b4a7a3d-d87d-4440-b2dd-d2b0a9e9c115'},
   {title:'Paradigm | Shift',acc:'avidaa1',songs:1,url:'https://suno.com/playlist/da514b98-bbaf-4871-934c-856214bcf112'},
-  {title:'Open | Eyes',acc:'avidaa1',songs:1,url:'https://suno.com/playlist/1fd3d82b-4f4f-4b69-90f2-45fff911d6c3'},
-  // @avidaa2 (2)
-  {title:'Papia Ku Mi',acc:'avidaa2',songs:7,url:'https://suno.com/playlist/9e6c044c-a1ec-4f89-bacc-71d80ab422b2'},
-  {title:'Libertad',acc:'avidaa2',songs:3,url:'https://suno.com/playlist/cb9eec8e-420f-4c85-a8e7-e2801d53b77f'},
-  // @avidaa0 (2)
-  {title:'Papia Ku Mi',acc:'avidaa0',songs:11,url:'https://suno.com/playlist/e7a347b3-d22c-440b-bb91-9dec752f139d'},
-  {title:'Open | Eyes',acc:'avidaa0',songs:1,url:'https://suno.com/playlist/da448e7f-665d-48cc-8325-cb52d4c0fbd7'},
+  {title:'Synthetic | Spark',acc:'avidaa1',songs:10,url:'https://suno.com/playlist/a32e1c1d-17be-42ea-a785-c586d685e0b0'},
+  // @avidaa2 (6) — verified 2026-07-11
+  {title:'Tejido | Digital',acc:'avidaa2',songs:4,url:'https://suno.com/playlist/559ecc38-6ba5-42e2-830c-2a9ddaa643f4'},
+  {title:'Bos Di Ansestronan',acc:'avidaa2',songs:1,url:'https://suno.com/playlist/832a0922-74c0-425d-89e5-b4c1907b5d54'},
+  {title:'Libertad',acc:'avidaa2',songs:11,url:'https://suno.com/playlist/cb9eec8e-420f-4c85-a8e7-e2801d53b77f'},
+  {title:'Only Truth',acc:'avidaa2',songs:3,url:'https://suno.com/playlist/7ccd2861-f294-4d12-a7a7-561cb242d041'},
+  {title:'Open Eyes',acc:'avidaa2',songs:1,url:'https://suno.com/playlist/bdeaa288-453f-4c36-916a-d97a541ee782'},
+  {title:'Papia Ku Mi',acc:'avidaa2',songs:8,url:'https://suno.com/playlist/9e6c044c-a1ec-4f89-bacc-71d80ab422b2'},
+  // @avidaa0 (6) — verified 2026-07-11
+  {title:'Tejido | Digital',acc:'avidaa0',songs:4,url:'https://suno.com/playlist/35119f89-9e1f-4198-a5e3-5ac960ab5ceb'},
+  {title:'Bos Di Ansestronan',acc:'avidaa0',songs:1,url:'https://suno.com/playlist/657d0b46-b313-4316-96f3-e762ea5bf825'},
+  {title:'Libertad',acc:'avidaa0',songs:1,url:'https://suno.com/playlist/50c9e180-db7d-47a3-aa24-ae2d15528bd3'},
+  {title:'Only Truth',acc:'avidaa0',songs:3,url:'https://suno.com/playlist/0a8526bb-9f22-4373-af01-f7a609ca0b18'},
+  {title:'Papia Ku Mi',acc:'avidaa0',songs:13,url:'https://suno.com/playlist/e7a347b3-d22c-440b-bb91-9dec752f139d'},
+  {title:'Open | Eyes',acc:'avidaa0',songs:3,url:'https://suno.com/playlist/da448e7f-665d-48cc-8325-cb52d4c0fbd7'},
 ];
 
 // ─── GRADIENT ENGINE ───
@@ -666,12 +718,12 @@ renderPl('all');
 // ─── AUTO-CALC STATS ───
 (function(){
   var totalPl=PL.length;
-  var totalSongs=PL.reduce(function(s,p){return s+p.songs},0);
+  // Note: totalSongs = sum of playlist entries (songs can repeat across playlists),
+  // not the unique song count. Unique songs (226, verified per-account) is set statically
+  // in the HTML above and intentionally not overwritten here.
   var elPl=document.getElementById('stat-pl');
-  var elSongs=document.getElementById('stat-songs');
   var elPlSub=document.getElementById('stat-pl-sub');
   if(elPl) elPl.textContent=totalPl;
-  if(elSongs) elSongs.textContent=totalSongs+'+';
   if(elPlSub) elPlSub.textContent=totalPl;
   // update playlists section meta count
   var secMeta=document.querySelector('#playlists .sec-meta');
