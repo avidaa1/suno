@@ -143,6 +143,32 @@ body>*{position:relative;z-index:1}
 .btn-inv{background:rgba(255,119,34,.1);border:1px solid rgba(255,119,34,.3);color:var(--a)}
 .btn-inv:hover{background:rgba(255,119,34,.2);border-color:var(--a)}
 
+/* ─── KONSENSIA SECTION (added 2026-11-26) ─── */
+@property --ka{syntax:'<angle>';inherits:false;initial-value:0deg}
+.kons{position:relative;margin:0 0 32px;padding:2px;border-radius:16px;background:conic-gradient(from var(--ka),#ff2d95,#ff8c00,#ffe14d,#33ff99,#2fc7ff,#b25cff,#ff2d95);animation:konsSpin 9s linear infinite}
+@keyframes konsSpin{to{--ka:360deg}}
+.kons-in{background:var(--surf);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:20px}
+.kons-top{display:grid;grid-template-columns:minmax(0,180px) minmax(0,1fr);gap:20px;align-items:center}
+.kons-cover{width:100%;height:auto;aspect-ratio:2/3;object-fit:cover;border-radius:12px;border:1px solid var(--bdr);display:block}
+.kons-name{font-family:'Bebas Neue',sans-serif;font-size:clamp(32px,6vw,48px);letter-spacing:2px;line-height:1}
+.kons-txt{color:var(--mute2);font-size:14px;overflow-wrap:anywhere;margin-top:8px}
+.kons-txt span{display:block;margin-top:4px}
+.kons-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.kons-songs{display:flex;flex-direction:column;gap:10px}
+.kons-song{display:flex;align-items:center;gap:12px;min-height:64px;padding:8px 12px;border:1px solid var(--bdr);border-radius:var(--rs);background:var(--surf2);transition:border-color .2s,transform .2s}
+.kons-song:hover,.kons-song:focus-visible,.kons-brain:hover,.kons-brain:focus-visible{border-color:var(--a);transform:translateX(3px);outline:none}
+.kons-song:focus-visible,.kons-brain:focus-visible{box-shadow:0 0 0 2px var(--a)}
+.kons-song img{width:48px;height:48px;border-radius:8px;object-fit:cover;flex:none}
+.kons-st{flex:1;min-width:0;font-weight:700;font-size:14px;overflow-wrap:anywhere}
+.kons-len{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--mute2);flex:none}
+.kons-open{flex:none;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--a)}
+.kons-brain{display:flex;align-items:center;gap:14px;min-height:64px;padding:12px 14px;border-radius:var(--rs);border:1px dashed var(--b);background:rgba(255,61,139,.06);transition:border-color .2s,transform .2s}
+.kons-brain b{display:block;font-size:14px}
+.kons-brain small{display:block;color:var(--mute2);font-size:12px;overflow-wrap:anywhere}
+.kons-ico{font-size:28px;flex:none;line-height:1}
+@media(max-width:640px){.kons-top{grid-template-columns:1fr}.kons-cover{max-width:200px}.kons-in{padding:16px}}
+@media(prefers-reduced-motion:reduce){.kons{animation:none}.kons-song,.kons-brain{transition:none}}
+
 /* ─── PLAYLIST TABS ─── */
 .tab-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
 .tab-btn{
@@ -373,13 +399,13 @@ footer a{color:var(--a)}footer a:hover{text-decoration:underline}
 
   <p class="hero-sub">
     AI-crafted sound · Consciousness · Frequency<br>
-    4 accounts · <span id="stat-pl-sub">47</span> playlists · all songs open
+    4 accounts · <span id="stat-pl-sub">48</span> playlists · all songs open
   </p>
 
   <div class="hero-stats">
     <div class="s-item"><div class="s-num">12.3K</div><div class="s-lbl">Total Plays</div></div>
     <div class="s-item"><div class="s-num">4</div><div class="s-lbl">Accounts</div></div>
-    <div class="s-item"><div class="s-num" id="stat-pl">47</div><div class="s-lbl">Playlists</div></div>
+    <div class="s-item"><div class="s-num" id="stat-pl">48</div><div class="s-lbl">Playlists</div></div>
     <div class="s-item"><div class="s-num" id="stat-songs">226</div><div class="s-lbl">Songs</div></div>
   </div>
 
@@ -425,7 +451,7 @@ footer a{color:var(--a)}footer a:hover{text-decoration:underline}
         <div class="acc-stats-row">
           <div class="acc-stat"><strong>8.2K</strong>Plays</div>
           <div class="acc-stat"><strong>116</strong>Followers</div>
-          <div class="acc-stat"><strong>21</strong>Playlists</div>
+          <div class="acc-stat"><strong>22</strong>Playlists</div>
         </div>
         <div class="acc-btns">
           <a href="https://suno.com/@avidaa" target="_blank" class="btn btn-pri">▶ Profile</a>
@@ -503,7 +529,38 @@ footer a{color:var(--a)}footer a:hover{text-decoration:underline}
     <div class="sec-head">
       <h2 class="sec-title" id="s-playlists">Playlists</h2>
       <div class="sec-line"></div>
-      <span class="sec-meta">47 playlists</span>
+      <span class="sec-meta">48 playlists</span>
+    </div>
+
+    <!-- ═══ KONSENSIA (newest, listed from the live playlist when this page was updated) ═══ -->
+    <div class="kons" id="konsensia">
+      <div class="kons-in">
+        <div class="kons-top">
+          <img class="kons-cover" src="images/konsensia-cover-brain.jpg" width="240" height="360" alt="Konsensia cover: a brain hidden in a pattern" loading="lazy">
+          <div>
+            <h3 class="kons-name g">Konsensia</h3>
+            <p class="kons-txt">Konsensia: kantikanan pa esnan ku a lanta. Bèrdat no ta pa bende.<span>Consciousness: songs for the awakened. Truth is not for sale.</span></p>
+            <div class="kons-actions">
+              <a class="btn btn-pri" href="https://suno.com/playlist/f59a0308-5196-47b4-8ce6-2198ccf66f8f" target="_blank" rel="noopener noreferrer">▶ Open playlist</a>
+              <span class="pl-songs" style="align-self:center">2 songs · public</span>
+            </div>
+          </div>
+        </div>
+        <div class="kons-songs">
+          <a class="kons-song" href="https://suno.com/song/fe06b468-6903-49b9-bacb-6aa85c41986d" target="_blank" rel="noopener noreferrer">
+            <img src="images/si-bo-ke-cover.jpg" width="96" height="96" alt="Cover of Si Bo Ke" loading="lazy">
+            <span class="kons-st">Bos di Ansestronan ³ | Si Bo Ke</span><span class="kons-len">3:34</span><span class="kons-open">Open ▶</span>
+          </a>
+          <a class="kons-song" href="https://suno.com/song/fc844c34-d4d8-4a33-a339-51df64819167" target="_blank" rel="noopener noreferrer">
+            <img src="https://cdn1.suno.ai/image_fc844c34-d4d8-4a33-a339-51df64819167.jpeg" width="96" height="96" alt="Cover of Warda Bo Bos" loading="lazy">
+            <span class="kons-st">Warda Bo Bos</span><span class="kons-len">3:27</span><span class="kons-open">Open ▶</span>
+          </a>
+        </div>
+        <a class="kons-brain" href="https://avidaa1.github.io/illusions/" target="_blank" rel="noopener">
+          <span class="kons-ico" aria-hidden="true">🧠</span>
+          <span><b>Hidden 3D brain</b><small>Stereogram + a walk-through gallery of illusions. Look softly, it comes alive. / Wak suave, e ta bira bibu.</small></span>
+        </a>
+      </div>
     </div>
 
     <div class="tab-row">
@@ -671,7 +728,8 @@ footer a{color:var(--a)}footer a:hover{text-decoration:underline}
 <script>
 // ─── PLAYLIST DATA ───
 var PL=[
-  // @avidaa (21) — verified 2026-07-11
+  // @avidaa (22) — 21 verified 2026-07-11, Konsensia added 2026-11-26 from the live playlist
+  {title:'Konsensia',acc:'avidaa',songs:2,url:'https://suno.com/playlist/f59a0308-5196-47b4-8ce6-2198ccf66f8f'},
   {title:'Tejido | Digital',acc:'avidaa',songs:4,url:'https://suno.com/playlist/f9c2ec0c-66fc-493e-bd68-38f56bb34499'},
   {title:'Forever | Free',acc:'avidaa',songs:11,url:'https://suno.com/playlist/5d914e9c-605b-4491-a8e0-2c786d8bcbbc'},
   {title:'Bos Di Ansestronan',acc:'avidaa',songs:8,url:'https://suno.com/playlist/b72a995a-a72b-430b-a980-a4a9e4f32c82'},
@@ -854,7 +912,7 @@ renderComments();
 <script id="av-shell-20261124">/* AVIDAA shell: shared header (or floating pill) + footer with the "Last updated" stamp. No outside calls, no tracking.
    Template tokens are replaced when a page is built: Suno --av-music Music and Art 2026-11-24 06:37 */
 (function(){
-  var NAME='Suno',SECTOR='--av-music',STAMP='2026-11-25 18:36',HOME='https://avidaa1.github.io/';
+  var NAME='Suno',SECTOR='--av-music',STAMP='2026-11-26 19:49',HOME='https://avidaa1.github.io/';
   var ARROW='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
   function build(){
     if(!document.body||document.querySelector('.av-footer'))return;
